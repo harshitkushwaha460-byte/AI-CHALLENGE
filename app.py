@@ -96,10 +96,10 @@ if st.button("Run Ranking"):
             file_name="submission.csv",
             mime="text/csv"
         )
-    except Exception as e:
-        import traceback
-        st.error(str(e))
-        st.code(traceback.format_exc())    
+        except Exception as e:
+            import traceback
+            st.error(str
+ 
 
     finally:
 
