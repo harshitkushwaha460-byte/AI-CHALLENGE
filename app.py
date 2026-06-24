@@ -96,24 +96,14 @@ if st.button("Run Ranking"):
             file_name="submission.csv",
             mime="text/csv"
         )
-            except Exception as e:
-        import traceback
+        except Exception as e:
+            import traceback
+            st.error(str(e))
+            st.code(traceback.format_exc())
 
-        st.error(str(e))
-        st.code(traceback.format_exc())
+        finally:
+            if os.path.exists(candidate_path):
+                os.remove(candidate_path)
+            if os.path.exists(jd_path):
+                os.remove(jd_path)
 
-    finally:
-
-        if os.path.exists(candidate_path):
-            os.remove(candidate_path)
-
-        if os.path.exists(jd_path):
-            os.remove(jd_path)
-
-    finally:
-
-        if os.path.exists(candidate_path):
-            os.remove(candidate_path)
-
-        if os.path.exists(jd_path):
-            os.remove(jd_path)
