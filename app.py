@@ -62,48 +62,57 @@ if st.button("Run Ranking"):
 
         jd_path = temp_jd.name
 
-    try:
+   try:
 
-        with st.spinner(
-            "Ranking candidates..."
-        ):
+    with st.spinner(
+        "Ranking candidates..."
+    ):
 
-            submission = rank_candidates(
-                candidate_path,
-                jd_path
-            )
-
-        st.success(
-            "Ranking completed successfully!"
+        submission = rank_candidates(
+            candidate_path,
+            jd_path
         )
 
-        st.subheader(
-            "Top Ranked Candidates"
-        )
+    st.success(
+        "Ranking completed successfully!"
+    )
 
-        st.dataframe(
-            submission,
-            use_container_width=True
-        )
+    st.subheader(
+        "Top Ranked Candidates"
+    )
 
-        csv_data = submission.to_csv(
-            index=False
-        )
+    st.dataframe(
+        submission,
+        use_container_width=True
+    )
 
-        st.download_button(
-            label="📥 Download submission.csv",
-            data=csv_data,
-            file_name="submission.csv",
-            mime="text/csv"
-        )
-        except Exception as e:
-            import traceback
-            st.error(str(e))
-            st.code(traceback.format_exc())
+    csv_data = submission.to_csv(
+        index=False
+    )
 
-        finally:
-            if os.path.exists(candidate_path):
-                os.remove(candidate_path)
-            if os.path.exists(jd_path):
-                os.remove(jd_path)
+    st.download_button(
+        label="📥 Download submission.csv",
+        data=csv_data,
+        file_name="submission.csv",
+        mime="text/csv"
+    )
 
+except Exception as e:
+
+    import traceback
+
+    st.error(
+        f"Error: {str(e)}"
+    )
+
+    st.code(
+        traceback.format_exc()
+    )
+
+finally:
+
+    if os.path.exists(candidate_path):
+        os.remove(candidate_path)
+
+    if os.path.exists(jd_path):
+        os.remove(jd_path)
