@@ -62,57 +62,57 @@ if st.button("Run Ranking"):
 
         jd_path = temp_jd.name
 
-   try:
+    try:
 
-    with st.spinner(
-        "Ranking candidates..."
-    ):
+        with st.spinner(
+            "Ranking candidates..."
+        ):
 
-        submission = rank_candidates(
-            candidate_path,
-            jd_path
+            submission = rank_candidates(
+                candidate_path,
+                jd_path
+            )
+
+        st.success(
+            "Ranking completed successfully!"
         )
 
-    st.success(
-        "Ranking completed successfully!"
-    )
+        st.subheader(
+            "Top Ranked Candidates"
+        )
 
-    st.subheader(
-        "Top Ranked Candidates"
-    )
+        st.dataframe(
+            submission,
+            use_container_width=True
+        )
 
-    st.dataframe(
-        submission,
-        use_container_width=True
-    )
+        csv_data = submission.to_csv(
+            index=False
+        )
 
-    csv_data = submission.to_csv(
-        index=False
-    )
+        st.download_button(
+            label="📥 Download submission.csv",
+            data=csv_data,
+            file_name="submission.csv",
+            mime="text/csv"
+        )
 
-    st.download_button(
-        label="📥 Download submission.csv",
-        data=csv_data,
-        file_name="submission.csv",
-        mime="text/csv"
-    )
+    except Exception as e:
 
-except Exception as e:
+        import traceback
 
-    import traceback
+        st.error(
+            f"Error: {str(e)}"
+        )
 
-    st.error(
-        f"Error: {str(e)}"
-    )
+        st.code(
+            traceback.format_exc()
+        )
 
-    st.code(
-        traceback.format_exc()
-    )
+    finally:
 
-finally:
+        if os.path.exists(candidate_path):
+            os.remove(candidate_path)
 
-    if os.path.exists(candidate_path):
-        os.remove(candidate_path)
-
-    if os.path.exists(jd_path):
-        os.remove(jd_path)
+        if os.path.exists(jd_path):
+            os.remove(jd_path)
