@@ -27,6 +27,7 @@ rank_candidates.py
 requirements.txt
 sample_candidates.json
 job_description.docx
+submission_metadata.yaml
 README.md
 ```
 
