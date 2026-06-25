@@ -1,0 +1,78 @@
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "minded_people"  
+
+primary_contact:
+  name: " Harshit kushwaha"
+  email: "harshitkushwaha460@gmail.com"   
+  phone: "+91-7078529760"        
+
+team_members:
+  - name: "Harshit kushwaha"
+    email: "harshitkushwaha460@gmail.com"   
+  
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/harshitkushwaha460-byte/AI-CHALLENGE.git"
+
+
+sandbox_link: "https://ai-challenge-no3kdn3jpncxvhv9hzkquv.streamlit.app/"
+
+reproduce_command: "python rank_candidates.py" 
+                  "and" " for streamlit: app.py"
+
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Windows Laptop"                    
+  cpu_cores: 8                                  
+  ram_gb: 16                                    
+  os: "Windows 11"                             
+  uses_gpu_for_inference: false                 
+  has_network_during_ranking: false             
+  pre_computation_required: false               
+  pre_computation_time_minutes: 0               
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+
+ai_tools_used:
+  - "ChatGPT"
+
+ai_usage_summary: |
+"Used ChatGPT for  especially debugging Python code,for some ideas,
+dependency management,.
+No candidate data was used to train any model".
+
+# ============================================================================
+# Approach summary 
+# ============================================================================
+methodology_summary: |
+  " My ranking system uses a two-stage candidate selection pipeline.
+  First, a fast filtering stage scores all candidates using career
+  relevance, retrieval-related skills, experience, and behavioral
+  signals. The top 2000 candidates are selected from the large pool.
+  In the second stage, semantic ranking is performed using the
+  sentence-transformers/all-MiniLM-L6-v2 embedding model. Candidate
+  profiles and job descriptions are embedded and compared using cosine
+  similarity. Additional factors such as retrieval expertise, career
+  relevance, experience range, recruiter engagement signals, role
+  bonuses, and role penalties are combined into a final ranking score.
+  The system produces the top 100 ranked candidates along with
+  human-readable reasoning for each recommendation."
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true        
+  code_is_original_work: true       
+  no_collusion: true                
+  honeypot_check_done: false        
+  reproduction_tested: true         
