@@ -19,7 +19,7 @@ st.write(
     a submission CSV.
     """
 )
-
+st.write("Please upload named as sample_candidates")
 candidate_file = st.file_uploader(
     "Upload candidates",
     type=["json","jsonl"]
