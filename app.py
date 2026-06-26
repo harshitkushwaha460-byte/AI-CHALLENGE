@@ -33,7 +33,7 @@ jd_file = st.file_uploader(
 if st.button("Run Ranking"):
 
     if candidate_file is None:
-        st.error("Please upload candidates.jsonl")
+        st.error("Please upload sample_candidates.jsonl")
         st.stop()
 
     if jd_file is None:
