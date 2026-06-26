@@ -1,7 +1,4 @@
 
-# ============================================================================
-# Team identity
-# ============================================================================
 team_name: "Minded_People"  
 
 primary_contact:
@@ -12,11 +9,8 @@ primary_contact:
 team_members:
   - name: "Harshit kushwaha"
     email: "harshitkushwaha460@gmail.com"   
-  
+   
 
-# ============================================================================
-# Code and reproducibility
-# ============================================================================
 github_repo: "https://github.com/harshitkushwaha460-byte/AI-CHALLENGE.git"
 
 
@@ -26,9 +20,7 @@ reproduce_command: "python rank_candidates.py"
                   "and" " for streamlit: app.py"
 
 
-# ============================================================================
-# Compute environment
-# ============================================================================
+
 compute:
   platform: "Windows Laptop"                    
   cpu_cores: 8                                  
@@ -39,9 +31,6 @@ compute:
   pre_computation_required: false               
   pre_computation_time_minutes: 0               
 
-# ============================================================================
-# AI tools declaration
-# ============================================================================
 
 ai_tools_used:
   - "ChatGPT"
@@ -51,9 +40,7 @@ ai_usage_summary: |
 dependency management,.
 No candidate data was used to train any model".
 
-# ============================================================================
-# Approach summary 
-# ============================================================================
+
 methodology_summary: |
   " My ranking system uses a two-stage candidate selection pipeline.
   First, a fast filtering stage scores all candidates using career
@@ -67,9 +54,8 @@ methodology_summary: |
   bonuses, and role penalties are combined into a final ranking score.
   The system produces the top 100 ranked candidates along with
   human-readable reasoning for each recommendation."
-# ============================================================================
-# Declarations
-# ============================================================================
+
+
 declarations:
   read_submission_spec: true        
   code_is_original_work: true       
