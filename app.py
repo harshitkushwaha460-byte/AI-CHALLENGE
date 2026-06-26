@@ -21,7 +21,7 @@ st.write(
 )
 st.write("Please upload named as sample_candidates")
 candidate_file = st.file_uploader(
-    "Upload candidates",
+    "Upload candidates","Please upload named as sample_candidates"
     type=["json","jsonl"]
 )
 
