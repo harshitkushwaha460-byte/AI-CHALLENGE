@@ -82,6 +82,7 @@ job_description.docx
 
 Streamlit Cloud deployment:
 https://ai-challenge-no3kdn3jpncxvhv9hzkquv.streamlit.app/
+(Note: If You Find this app in sleeping mode,Please click on the "get this app back up")
 
 ---
 
